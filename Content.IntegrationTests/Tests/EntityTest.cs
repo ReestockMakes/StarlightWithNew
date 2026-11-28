@@ -295,6 +295,7 @@ namespace Content.IntegrationTests.Tests
             var excludedPrototypes = new HashSet<string>
             {
                 "MoffDemonWraithJaunt", // Leaves a detached jaunt visual that intentionally outlives the entity.
+                "JugCTFBomb", // Instantly mixes into an explosion.
             };
             #endregion
 
