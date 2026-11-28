@@ -78,12 +78,12 @@ public sealed partial class DungeonJob
             {
                 var inward = wallDirection.GetOpposite().ToIntVec();
                 return dungeon.CorridorTiles.Contains(tile) &&
-                       (gen.IgnoreReserved || !reservedTiles.Contains(tile)) &&
-                       _anchorable.TileFree((_gridUid, _grid), tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask) &&
-                       dungeon.CorridorTiles.Contains(tile + inward) &&
-                       dungeon.CorridorTiles.Contains(tile + inward * 2) &&
-                       HasWallOrWindow(tile + wallDirection.ToIntVec()) &&
-                       !HasAirlockNearby(tile);
+                    (gen.IgnoreReserved || !reservedTiles.Contains(tile)) &&
+                    _anchorable.TileFree((_gridUid, _grid), tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask) &&
+                    dungeon.CorridorTiles.Contains(tile + inward) &&
+                    dungeon.CorridorTiles.Contains(tile + inward * 2) &&
+                    HasWallOrWindow(tile + wallDirection.ToIntVec()) &&
+                    !HasAirlockNearby(tile);
             }
 
             var corridorTiles = dungeon.CorridorTiles.OrderBy(tile => tile.Y).ThenBy(tile => tile.X);
